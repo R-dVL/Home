@@ -1,6 +1,6 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'Catalogo/base.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'Catalogo/sidenav.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'Catalogo/topNav.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'Catalogo/table.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'Catalogo/box.css' %}">
 <link rel="shortcut icon" type="image/png" href="{% static '/Catalogo/images/favicon.png' %}"/>
@@ -15,15 +15,16 @@
   <title>{% block title %}Base{% endblock %}</title>
 </head>
 
-<body class="main">
-  <div id="mySidenav" class="sidenav">
+<section class="site">
+  <nav>
     <a href="/">HOME</a>
     <a href="/catalogo/libros/">Libros</a>
     <a href="/catalogo/peliculas/">Películas</a>
     <a href="/catalogo/series/">Series</a>
     <a href="/catalogo/pendientes/">Pendientes</a>
     <a href="/admin">Usuario</a>
-  </div>
+  </nav>
+</section>
   <main>
     {% block content %}
     {% endblock %}
