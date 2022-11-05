@@ -8,6 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title> Películas </title>
 </head>
+<body id="main">
+
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="/admin">Usuario</a>
@@ -16,20 +18,29 @@
   <a href="/peliculas/">Películas</a>
   <a href="/series/">Series</a>
 </div>
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-  <script>
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-    }
-    
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-    }
-  </script>
-<div id="box"><h1>Películas</h1></div>
-</body>
-<br/>
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="¿Qué andas buscando?">
+
+<div id="box">
+  <h1>Películas</h1>
+</div>
+
+<div id="main">
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&emsp;&#9776;Menu</span>
+</div>
+
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+  }
+</script>
+
+<br/><input type="text" id="myInput" onkeyup="myFunction()" placeholder="¿Qué andas buscando?">
+
 <script>
   function myFunction() {
     // Declare variables
@@ -52,16 +63,15 @@
       }
     }
   }
-  </script>
+</script>
+
 <table id="myTable">
     <tr class="header">
         <th onclick="sortTable(0)">Nombre</th>
         <th onclick="sortTable(1)">Director</th>
         <th onclick="sortTable(2)">Género</th>
         <th onclick="sortTable(3)">Subgénero</th>
-        <th onclick="sortTable(4)">Fecha de publicación</th>
-        <th onclick="sortTable(5)">Fecha de visión</th>
-        <th onclick="sortTable(6)">Puntuación</th>
+        <th onclick="sortTable(4)">Puntuación</th>
     </tr>
     <script>
       function sortTable(n) {
@@ -127,8 +137,6 @@
             <td>{{ peli.director }}</td>
             <td>{{ peli.genero }}</td>
             <td>{{ peli.subgenero }}</td>
-            <td>{{ peli.estreno }}</td>
-            <td>{{ peli.visualizacion }}</td>
             <td>{{ peli.puntuacion }}</td>
         </tr>
           {% endif %}
@@ -137,6 +145,7 @@
         <p>Tienes que ver más pelis.</p>
     {% endif %}
 </table>
-    <footer>
-    </footer>
+</body>
+<footer>
+</footer>
 </html>

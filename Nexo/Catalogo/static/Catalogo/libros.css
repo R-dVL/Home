@@ -34,7 +34,7 @@ body {
   transition: 0.5s;
   padding-top: 60px;
 }
-  
+
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -43,11 +43,11 @@ body {
   display: block;
   transition: 0.3s;
 }
-  
+
 .sidenav a:hover {
   color: #f1f1f1;
 }
-  
+
 .sidenav .closebtn {
   position: absolute;
   top: 0;
@@ -55,7 +55,12 @@ body {
   font-size: 36px;
   margin-left: 50px;
 }
-  
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -81,6 +86,9 @@ body {
   font-size: 18px; /* Increase font-size */
   margin-left: 50;
   margin-right: 50;
+  margin-bottom: 50;
+  box-shadow: 5px 10px rgba(0, 0, 0, 0.493);
+
 }
 
 #myTable th, #myTable td {

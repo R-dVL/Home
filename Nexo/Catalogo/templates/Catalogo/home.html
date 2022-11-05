@@ -8,6 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title> Home </title>
 </head>
+<body id="main">
+
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="/admin">Usuario</a>
@@ -16,26 +18,36 @@
   <a href="/peliculas/">Películas</a>
   <a href="/series/">Series</a>
 </div>
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-  <script>
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-    }
-    
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-    }
-  </script>
-<div id="box"><h1>Home</h1></div>
-</body>
-</br>
+
+<div id="box">
+  <h1>Home</h1>
+</div>
+
+<div id="main">
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&emsp;&#9776;Menu</span>
+</div>
+
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+  }
+</script>
+
 <table id="myTable">
   <tr class="header">
-    <th colspan="2">Libros pendientes</th>
+    <th colspan="4">Libros pendientes</th>
   </tr>
   <tr class="header">
       <th>Nombre</th>
       <th>Autor</th>
+      <th>Género</th>
+      <th>Subgénero</th>
   </tr>
   {% if lista_libros %}
         <tr> 
@@ -43,6 +55,8 @@
           {% if libro.leido == False %}
             <td>{{ libro.nombre }}</td>
             <td>{{ libro.autor }}</td>
+            <td>{{ libro.genero }}</td>
+            <td>{{ libro.subgenero }}</td>
         </tr>
           {% endif %}
         {% endfor %}
@@ -53,11 +67,13 @@
 </br>
 <table id="myTable">
   <tr class="header">
-    <th colspan="2">Películas pendientes</th>
+    <th colspan="4">Películas pendientes</th>
   </tr>
   <tr class="header">
       <th>Nombre</th>
       <th>Director</th>
+      <th>Género</th>
+      <th>Subgénero</th>
   </tr>
   {% if lista_pelis %}
         <tr> 
@@ -65,6 +81,8 @@
           {% if peli.vista == False %}
             <td>{{ peli.nombre }}</td>
             <td>{{ peli.director }}</td>
+            <td>{{ peli.genero }}</td>
+            <td>{{ peli.subgenero }}</td>
           {% endif %}
         </tr>
         {% endfor %}
@@ -75,10 +93,12 @@
 </br>
 <table id="myTable">
   <tr class="header">
-    <th colspan="2">Series pendientes</th>
+    <th colspan="4">Series pendientes</th>
   <tr class="header">
       <th>Nombre</th>
       <th>Director</th>
+      <th>Género</th>
+      <th>Subgénero</th>
   </tr>
   {% if lista_series %}
         <tr> 
@@ -86,6 +106,8 @@
           {% if serie.vista == False %}
             <td>{{ serie.nombre }}</td>
             <td>{{ serie.director }}</td>
+            <td>{{ serie.genero }}</td>
+            <td>{{ serie.subgenero }}</td>
           {% endif %}
         </tr>
         {% endfor %}
@@ -93,4 +115,7 @@
         <p>Tienes que ver más series.</p>
     {% endif %}
 </table>
+</body>
+<footer>
+</footer>
 </html>
