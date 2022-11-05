@@ -1,12 +1,12 @@
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'Catalogo/catalogo.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'Catalogo/home.css' %}">
 <link rel="shortcut icon" type="image/png" href="{% static '/Catalogo/images/favicon.png' %}"/>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Catálogo </title>
+<title> Home </title>
 </head>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -26,12 +26,12 @@
       document.getElementById("mySidenav").style.width = "0";
     }
   </script>
-<div id="box"><h1>Catálogo</h1></div>
+<div id="box"><h1>Home</h1></div>
 </body>
 </br>
 <table id="myTable">
   <tr class="header">
-    <th>Últimos libros leídos</th>
+    <th>Libros pendientes</th>
     <th></th>
   </tr>
   <tr class="header">
@@ -41,9 +41,11 @@
   {% if lista_libros %}
         <tr> 
         {% for libro in lista_libros %}
+          {% if libro.leido == False %}
             <td>{{ libro.nombre }}</td>
             <td>{{ libro.autor }}</td>
         </tr>
+          {% endif %}
         {% endfor %}
     {% else %}
         <p>Tienes que leer más.</p>
@@ -52,7 +54,7 @@
 </br>
 <table id="myTable">
   <tr class="header">
-    <th>Últimas películas vistas</th>
+    <th>Películas pendientes</th>
     <th></th>
   </tr>
   <tr class="header">
@@ -62,8 +64,10 @@
   {% if lista_pelis %}
         <tr> 
         {% for peli in lista_pelis %}
+          {% if peli.vista == False %}
             <td>{{ peli.nombre }}</td>
             <td>{{ peli.director }}</td>
+          {% endif %}
         </tr>
         {% endfor %}
     {% else %}
@@ -73,7 +77,7 @@
 </br>
 <table id="myTable">
   <tr class="header">
-    <th>Últimas series vistas</th>
+    <th>Series pendientes</th>
     <th></th>
   <tr class="header">
       <th>Nombre</th>
@@ -82,8 +86,10 @@
   {% if lista_series %}
         <tr> 
         {% for serie in lista_series %}
+          {% if serie.vista == False %}
             <td>{{ serie.nombre }}</td>
             <td>{{ serie.director }}</td>
+          {% endif %}
         </tr>
         {% endfor %}
     {% else %}

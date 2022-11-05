@@ -5,16 +5,16 @@ from django.template import loader
 from .models import Libro, Pelicula, Serie
 
 # Create your views here.
-def index(request):
-    lista_libros = Libro.objects.order_by('-lectura')[:3]
-    lista_pelis = Pelicula.objects.order_by('-visualizacion')[:3]
-    lista_series = Serie.objects.order_by('-visualizacion')[:3]
+def home(request):
+    lista_libros = Libro.objects.order_by('-lectura')
+    lista_pelis = Pelicula.objects.order_by('-visualizacion')
+    lista_series = Serie.objects.order_by('-visualizacion')
     context = {
         'lista_libros': lista_libros,
         'lista_pelis': lista_pelis,
         'lista_series': lista_series,
         }
-    return render(request, 'Catalogo/catalogo.html', context)
+    return render(request, 'Catalogo/home.html', context)
 
 def libros(request):
     lista_libros = Libro.objects.order_by('-lectura')[:30]

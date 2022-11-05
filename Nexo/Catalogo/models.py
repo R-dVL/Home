@@ -9,6 +9,7 @@ class Libro(models.Model):
     publicacion = models.DateField("Fecha de publicación")
     lectura = models.DateField("Fecha de lectura")
     puntuacion = models.FloatField()
+    leido = models.BooleanField()
     
     def __str__(self):
         return self.nombre
@@ -22,6 +23,7 @@ class Pelicula(models.Model):
     estreno = models.DateField("Fecha de estreno")
     visualizacion = models.DateField("Fecha de visualización")
     puntuacion = models.FloatField()
+    vista = models.BooleanField()
     
     def __str__(self):
         return self.nombre
@@ -34,6 +36,7 @@ class Serie(models.Model):
     estreno = models.DateField("Fecha de estreno")
     visualizacion = models.DateField("Fecha de visualización")
     puntuacion = models.FloatField()
+    vista = models.BooleanField()
     
     def __str__(self):
         return self.nombre

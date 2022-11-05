@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Catálogo </title>
+<title> Libros </title>
 </head>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -123,14 +123,16 @@
     {% if lista_libros %}
         <tr> 
         {% for libro in lista_libros %}
-            <td>{{ libro.nombre }}</td>
-            <td>{{ libro.autor }}</td>
-            <td>{{ libro.genero }}</td>
-            <td>{{ libro.subgenero }}</td>
-            <td>{{ libro.publicacion }}</td>
-            <td>{{ libro.lectura }}</td>
-            <td>{{ libro.puntuacion }}</td>
+          {% if libro.leido == True %}
+              <td>{{ libro.nombre }}</td>
+              <td>{{ libro.autor }}</td>
+              <td>{{ libro.genero }}</td>
+              <td>{{ libro.subgenero }}</td>
+              <td>{{ libro.publicacion }}</td>
+              <td>{{ libro.lectura }}</td>
+              <td>{{ libro.puntuacion }}</td>
         </tr>
+          {% endif %}
         {% endfor %}
     {% else %}
         <p>Tienes que leer más.</p>

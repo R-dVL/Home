@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Catálogo </title>
+<title> Películas </title>
 </head>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -122,6 +122,7 @@
     {% if lista_pelis %}
         <tr> 
         {% for peli in lista_pelis %}
+          {% if peli.vista == True %}
             <td>{{ peli.nombre }}</td>
             <td>{{ peli.director }}</td>
             <td>{{ peli.genero }}</td>
@@ -130,6 +131,7 @@
             <td>{{ peli.visualizacion }}</td>
             <td>{{ peli.puntuacion }}</td>
         </tr>
+          {% endif %}
         {% endfor %}
     {% else %}
         <p>Tienes que ver más pelis.</p>
