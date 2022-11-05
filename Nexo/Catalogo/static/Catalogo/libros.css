@@ -1,6 +1,6 @@
 #box {
   box-sizing: border-box;
-  width: 400px;
+  width: 75%;
   background-color: rgb(255, 255, 255);
   border: 1px solid;
   padding: 10px;
@@ -76,7 +76,7 @@ body {
 
 #myTable {
   border-collapse: collapse; /* Collapse borders */
-  width: auto; /* Full-width */
+  width: 75%; /* Full-width */
   border: 1px solid #ddd; /* Add a grey border */
   font-size: 18px; /* Increase font-size */
   margin-left: 50;
