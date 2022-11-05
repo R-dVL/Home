@@ -27,9 +27,7 @@
           <th onclick="sortTable(1)">Autor</th>
           <th onclick="sortTable(2)">Género</th>
           <th onclick="sortTable(3)">Subgénero</th>
-          <th onclick="sortTable(4)">Publicación</th>
-          <th onclick="sortTable(5)">Lectura</th>
-          <th onclick="sortTable(6)">Puntuación</th>
+          <th onclick="sortTable(4)">Puntuación</th>
         </tr>
 
         {% if lista_libros %}
@@ -40,8 +38,6 @@
                 <td>{{ libro.autor }}</td>
                 <td>{{ libro.genero }}</td>
                 <td>{{ libro.subgenero }}</td>
-                <td>{{ libro.publicacion }}</td>
-                <td>{{ libro.lectura }}</td>
                 <td>{{ libro.puntuacion }}</td>
               </tr>
               {% endif %}
