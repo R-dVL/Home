@@ -5,7 +5,7 @@ from django.template import loader
 from .models import Libro, Pelicula, Serie
 
 # Create your views here.
-def home(request):
+def pendientes(request):
     lista_libros = Libro.objects.order_by('-lectura')
     lista_pelis = Pelicula.objects.order_by('-visualizacion')
     lista_series = Serie.objects.order_by('-visualizacion')
@@ -14,7 +14,7 @@ def home(request):
         'lista_pelis': lista_pelis,
         'lista_series': lista_series,
         }
-    return render(request, 'Catalogo/home.html', context)
+    return render(request, 'Catalogo/pendientes.html', context)
 
 def libros(request):
     lista_libros = Libro.objects.order_by('-lectura')[:30]
