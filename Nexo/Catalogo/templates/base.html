@@ -1,11 +1,29 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'Catalogo/base.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'Catalogo/sidenav.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'Catalogo/table.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'Catalogo/box.css' %}">
+<link rel="shortcut icon" type="image/png" href="{% static '/Catalogo/images/favicon.png' %}"/>
+
+<script type="text/javascript" src="{% static 'scripts/sortTable.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/searchBar.js' %}"></script>
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+  <title>{% block title %}Base{% endblock %}</title>
 </head>
 
-<body>
+<body class="main">
+  <div id="mySidenav" class="sidenav">
+    <a href="/">HOME</a>
+    <a href="/catalogo/libros/">Libros</a>
+    <a href="/catalogo/peliculas/">Películas</a>
+    <a href="/catalogo/series/">Series</a>
+    <a href="/catalogo/pendientes/">Pendientes</a>
+    <a href="/admin">Usuario</a>
+  </div>
   <main>
     {% block content %}
     {% endblock %}

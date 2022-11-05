@@ -1,105 +1,100 @@
+{% extends "base.html" %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'Catalogo/pendientes.css' %}">
-<link rel="shortcut icon" type="image/png" href="{% static '/Catalogo/images/favicon.png' %}"/>
 
-<!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Home </title>
-</head>
-<body class="main">
+  <head>
+    <title>{% block title %}Pendientes{% endblock title %}</title>
+  </head>
 
-<div id="mySidenav" class="sidenav">
-  <a href="/">HOME</a>
-  <a href="/catalogo/libros/">Libros</a>
-  <a href="/catalogo/peliculas/">Películas</a>
-  <a href="/catalogo/series/">Series</a>
-  <a href="/catalogo/pendientes/">Pendientes</a>
-  <a href="/admin">Usuario</a>
-</div>
+  <body>
 
-<div id="box">
-  <h2>&#9776;&nbsp;<b>Pendientes</b></h2>
-</div>
+    {% block content %}
+      <style>
+        body {
+          background-image: url({% static 'Catalogo/images/home.jpeg' %});
+        }
+      </style>
 
-<table id="myTable">
-  <tr class="header">
-    <th colspan="4">Libros pendientes</th>
-  </tr>
-  <tr class="header">
-      <th>Nombre</th>
-      <th>Autor</th>
-      <th>Género</th>
-      <th>Subgénero</th>
-  </tr>
-  {% if lista_libros %}
-        <tr> 
-        {% for libro in lista_libros %}
-          {% if libro.leido == False %}
-            <td>{{ libro.nombre }}</td>
-            <td>{{ libro.autor }}</td>
-            <td>{{ libro.genero }}</td>
-            <td>{{ libro.subgenero }}</td>
+      <div id="box">
+        <h2>&#9776;&nbsp;<b>Pendientes</b></h2>
+      </div>
+
+      <table id="myTable">
+        <tr class="header">
+          <th colspan="4">Libros pendientes</th>
         </tr>
-          {% endif %}
-        {% endfor %}
-    {% else %}
-        <p>Tienes que leer más.</p>
-    {% endif %}
-</table>
-</br>
-<table id="myTable">
-  <tr class="header">
-    <th colspan="4">Películas pendientes</th>
-  </tr>
-  <tr class="header">
-      <th>Nombre</th>
-      <th>Director</th>
-      <th>Género</th>
-      <th>Subgénero</th>
-  </tr>
-  {% if lista_pelis %}
-        <tr> 
-        {% for peli in lista_pelis %}
-          {% if peli.vista == False %}
-            <td>{{ peli.nombre }}</td>
-            <td>{{ peli.director }}</td>
-            <td>{{ peli.genero }}</td>
-            <td>{{ peli.subgenero }}</td>
-          {% endif %}
+        <tr class="header">
+            <th>Nombre</th>
+            <th>Autor</th>
+            <th>Género</th>
+            <th>Subgénero</th>
         </tr>
-        {% endfor %}
-    {% else %}
-        <p>Tienes que ver más peliculas.</p>
-    {% endif %}
-</table>
-</br>
-<table id="myTable">
-  <tr class="header">
-    <th colspan="4">Series pendientes</th>
-  <tr class="header">
-      <th>Nombre</th>
-      <th>Director</th>
-      <th>Género</th>
-      <th>Subgénero</th>
-  </tr>
-  {% if lista_series %}
-        <tr> 
-        {% for serie in lista_series %}
-          {% if serie.vista == False %}
-            <td>{{ serie.nombre }}</td>
-            <td>{{ serie.director }}</td>
-            <td>{{ serie.genero }}</td>
-            <td>{{ serie.subgenero }}</td>
+        {% if lista_libros %}
+              <tr> 
+              {% for libro in lista_libros %}
+                {% if libro.leido == False %}
+                  <td>{{ libro.nombre }}</td>
+                  <td>{{ libro.autor }}</td>
+                  <td>{{ libro.genero }}</td>
+                  <td>{{ libro.subgenero }}</td>
+              </tr>
+                {% endif %}
+              {% endfor %}
+          {% else %}
+              <p>Tienes que leer más.</p>
           {% endif %}
+      </table>
+      </br>
+      <table id="myTable">
+        <tr class="header">
+          <th colspan="4">Películas pendientes</th>
         </tr>
-        {% endfor %}
-    {% else %}
-        <p>Tienes que ver más series.</p>
-    {% endif %}
-</table>
-</body>
-<footer>
-</footer>
+        <tr class="header">
+            <th>Nombre</th>
+            <th>Director</th>
+            <th>Género</th>
+            <th>Subgénero</th>
+        </tr>
+        {% if lista_pelis %}
+              <tr> 
+              {% for peli in lista_pelis %}
+                {% if peli.vista == False %}
+                  <td>{{ peli.nombre }}</td>
+                  <td>{{ peli.director }}</td>
+                  <td>{{ peli.genero }}</td>
+                  <td>{{ peli.subgenero }}</td>
+                {% endif %}
+              </tr>
+              {% endfor %}
+          {% else %}
+              <p>Tienes que ver más peliculas.</p>
+          {% endif %}
+      </table>
+      </br>
+      <table id="myTable">
+        <tr class="header">
+          <th colspan="4">Series pendientes</th>
+        <tr class="header">
+            <th>Nombre</th>
+            <th>Director</th>
+            <th>Género</th>
+            <th>Subgénero</th>
+        </tr>
+        {% if lista_series %}
+              <tr> 
+              {% for serie in lista_series %}
+                {% if serie.vista == False %}
+                  <td>{{ serie.nombre }}</td>
+                  <td>{{ serie.director }}</td>
+                  <td>{{ serie.genero }}</td>
+                  <td>{{ serie.subgenero }}</td>
+                {% endif %}
+              </tr>
+              {% endfor %}
+          {% else %}
+              <p>Tienes que ver más series.</p>
+          {% endif %}
+      </table>
+    {% endblock content %}
+  </body>
 </html>

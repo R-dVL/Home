@@ -1,0 +1,9 @@
+#box {
+    box-sizing: border-box;
+    width: 75%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px;
+    margin:50px;
+  }
