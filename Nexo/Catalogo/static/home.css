@@ -73,8 +73,8 @@ img{
 .site {
   padding: 7em 0;
   text-align: center;
-  background-color: #efefef;
-  font-size: .8em;
+  background-color: #ffffff;
+  font-size: 1em;
   color: #444;
   position:relative
 }
@@ -95,7 +95,7 @@ img{
 }
 .site nav a{
   padding:10px 30px;
-  font-size:1.3em;
+  font-size: 1.8em;
   display:inline-block
 }
 .site nav a:hover{

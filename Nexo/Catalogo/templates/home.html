@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
-<link rel="shortcut icon" type="image/png" href="{% static '/Catalogo/images/favicon.png' %}"/>
 
 <html>
 <head>
@@ -19,18 +18,18 @@
 </header>
 <section class="site">
   <nav>
-    <a href="/catalogo/libros/">Catálogo</a>
+    <a href="/catalogo/libros/">Librería</a>
     <a href="">Fotos</a>
     <a href="">Restaurantes</a>
     <a href="">GatiCam</a>
-    <a href="/admin">Usuario</a>
+    <a href="/admin">Admin</a>
   </nav>
   {% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">Log Out</a></p>
+  <p>Hola {{ user.username }}!</p>
+  <button><a href="{% url 'logout' %}">Log Out</a></button>
 {% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">Log In</a>
+  <p>Para ver el contenido necesitas iniciar sesión</p> 
+  <button><a href="{% url 'login' %}">Log In</a></button>
 {% endif %}
 </section>
 <body>
