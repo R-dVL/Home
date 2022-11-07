@@ -57,7 +57,7 @@ a:active {
   font-size: 18px; /* Increase font-size */
   margin-left: 50;
   margin-right: 50;
-  margin-bottom: 50;
+  margin-bottom: 20;
   box-shadow: 5px 10px rgba(0, 0, 0, 0.493);  
 }
   
@@ -123,10 +123,20 @@ a:active {
 	border-radius: 25px;
   }
 
-  .image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
-    width: 20%;
+.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  width: 20%;
+}
+
+#addButton {
+   color: rgb(0, 0, 0); 
+   background-color: rgba(255, 255, 255, 0.514);
+   font-size: 15;
+   margin-left: 50px;
+   margin-bottom: 50px;
+   letter-spacing:1px; 
+   border-radius: 12px;
   }

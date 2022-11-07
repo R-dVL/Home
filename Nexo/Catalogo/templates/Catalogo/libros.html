@@ -20,7 +20,6 @@
       </div>
 
       <br/><input type="text" id="myInput" onkeyup="myFunction()" placeholder="¿Qué andas buscando?">
-      
       <table id="myTable">
         <tr class="header">
           <th onclick="sortTable(0)">Nombre</th>
@@ -46,6 +45,7 @@
             <p>Tienes que leer más.</p>
         {% endif %}
       </table>
+      <button id="addButton"><a href="/admin/Catalogo/libro/add/">+ Añadir libro</a></button>
     {% endblock content %}
     </body>
 </html>
