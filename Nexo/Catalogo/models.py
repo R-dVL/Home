@@ -10,7 +10,7 @@ class Libro(models.Model):
     leido = models.BooleanField()
     lectura = models.DateField("Fecha de lectura", blank = True, null = True)
     puntuacion = models.FloatField(blank = True, null = True)
-    portada = models.ImageField(upload_to='portadas', height_field=None, width_field=None, max_length=100, blank = True, null = True)
+    portada = models.ImageField(upload_to="portadas", height_field=None, width_field=None, max_length=100, blank = True, null = True)
     comentario = models.CharField(max_length = 200, blank = True, null = True)
     
     def __str__(self):

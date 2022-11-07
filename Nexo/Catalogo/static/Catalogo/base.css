@@ -114,11 +114,19 @@ a:active {
 /* Cajas de las vistas de tablas*/
 #box {
 	box-sizing: border-box;
-	width: 25%;
+	width: 75%;
 	margin: 50px;
 	background-color: rgb(255, 255, 255);
 	border: 1px solid;
 	padding: 10px;
 	box-shadow: 5px 10px rgba(0, 0, 0, 0.493);
 	border-radius: 25px;
+  }
+
+  .image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    width: 10%;
   }

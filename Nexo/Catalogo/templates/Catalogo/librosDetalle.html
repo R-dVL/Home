@@ -17,10 +17,13 @@
        
     <div id="box">
         <h2>&#9776;&nbsp;<b>{{ libro.nombre }}</b></h2>
-        <p>{{ libro.comentario }}</p>
+        {% if libro.comentario%}
+            <p>{{ libro.comentario }}</p>
+        {% endif %}
     </div>
-    <img src="{{ MEDIA_URL }} {{ libro.portada.url }}" alt="{{ libro.nombre }}" width="500" height="333" style="margin: 50px">
-
+    {% if libro.portada%}
+        <img src="{{ libro.portada.url }}" alt="{{ libro.nombre }}" class="image">
+    {% endif %}
     <table id="myTable">
         <tr class="header">
             <th>Autor</th>
