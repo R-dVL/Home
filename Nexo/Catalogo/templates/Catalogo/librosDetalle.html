@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+<html>
+  <head>
+    <title>{% block title %}Libros{% endblock title %}</title>
+  </head>
+
+  <body>
+
+    {% block content %}
+    <style>
+    body {
+        background-image: url({% static 'Catalogo/images/libros.jpg' %});
+    }
+    </style>
+       
+    <div id="box">
+        <h2>&#9776;&nbsp;<b>{{ libro.nombre }}</b></h2>
+        <p>{{ libro.comentario }}</p>
+    </div>
+    <img src="{{ libro.portada.url }}" alt="{{ libro.nombre }}" width="500" height="333" style="margin: 50px">
+
+    <table id="myTable">
+        <tr class="header">
+            <th>Autor</th>
+            <th>Género</th>
+            <th>Subgénero</th>
+            <th>Publicación</th>
+            <th>Lectura</th>
+            <th>Puntuación</th>
+        </tr>
+        <tr> 
+            <td>{{ libro.autor }}</td>
+            <td>{{ libro.genero }}</td>
+            <td>{{ libro.subgenero }}</td>
+            <td>{{ libro.publicacion }}</td>
+            <td>{{ libro.lectura }}</td>
+            <td>{{ libro.puntuacion }}</td>
+        </tr>
+    </table>
+    {% endblock content %}
+    </body>
+</html>

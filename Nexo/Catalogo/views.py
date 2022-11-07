@@ -24,6 +24,10 @@ def libros(request):
     context = {'lista_libros': lista_libros}
     return render(request, 'Catalogo/libros.html', context)
 
+def libros_detalle(request, libro_id):
+    libro = get_object_or_404(Libro, pk=libro_id)
+    return render(request, 'Catalogo/librosDetalle.html', {'libro': libro})
+
 @login_required
 def peliculas(request):
     lista_pelis = Pelicula.objects.order_by('-visualizacion')[:30]

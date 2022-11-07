@@ -11,11 +11,33 @@ body {
 	color: var(--color-text);
 	text-align: left;
 }
+a:link {
+	color: var(--color-text);
+	text-decoration: none;
+}
+  
+  /* visited link */
+a:visited {
+	color: var(--color-text);
+	text-decoration: none;
+}
+  
+  /* mouse over link */
+a:hover {
+	color: var(--color-text);
+	text-decoration: none;
+}
+  
+  /* selected link */
+a:active {
+	color: var(--color-text);
+	text-decoration: none;
+}
 
 /* Barra búsqueda de tablas */
 #myInput {
     background-image: url('images/searchicon.png'); /* Add a search icon to input */
-    background-position: 10px 12px; /* Position the search icon */
+    background-position: 12px; /* Position the search icon */
     background-repeat: no-repeat; /* Do not repeat the icon image */
     background-color: #ffffff98;
     width: auto; /* Full-width */
