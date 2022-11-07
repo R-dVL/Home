@@ -1,3 +1,4 @@
+/* Body */
 body {
     background-repeat: no-repeat;
     background-size: cover;
@@ -10,3 +11,92 @@ body {
 	color: var(--color-text);
 	text-align: left;
 }
+
+/* Barra búsqueda de tablas */
+#myInput {
+    background-image: url('images/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    background-color: #ffffff98;
+    width: auto; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+    margin-left: 50;
+	border-radius: 25px;
+  }
+
+/* Tablas */
+#myTable {
+  border-collapse: collapse; 
+  width: 85%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+  margin-left: 50;
+  margin-right: 50;
+  margin-bottom: 50;
+  box-shadow: 5px 10px rgba(0, 0, 0, 0.493);  
+}
+  
+#myTable th, #myTable td {
+  text-align: left; /* Left-align text */
+  padding: 12px; /* Add padding */
+  background-color: rgba(170, 169, 169, 0.548);
+}
+  
+#myTable tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+  background-color: rgba(192, 192, 192, 0.493);
+}
+  
+#myTable tr.header, #myTable tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #ffffff;
+}
+
+/* Navegador superior */
+.site {
+  padding: 2em 0;
+  text-align: center;
+  font-size: .8em;
+  color: #444;
+  position:relative
+}
+.site a {
+  color: #666;
+  text-decoration: none;
+}
+.site a:hover {
+  color: #222;
+}
+  
+.site nav{
+  position:absolute;
+  top:0;
+  left:0;
+  background:#222;
+  width:100%
+}
+.site nav a{
+  padding:10px 30px;
+  font: size 2em;
+  display:inline-block
+}
+.site nav a:hover{
+  background:#333;
+  color:#fff
+}
+
+/* Cajas de las vistas de tablas*/
+#box {
+	box-sizing: border-box;
+	width: 25%;
+	margin: 50px;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid;
+	padding: 10px;
+	box-shadow: 5px 10px rgba(0, 0, 0, 0.493);
+	border-radius: 25px;
+  }
