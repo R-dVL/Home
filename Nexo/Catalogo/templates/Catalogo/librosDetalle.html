@@ -19,7 +19,7 @@
         <h2>&#9776;&nbsp;<b>{{ libro.nombre }}</b></h2>
         <p>{{ libro.comentario }}</p>
     </div>
-    <img src="{{ libro.portada.url }}" alt="{{ libro.nombre }}" width="500" height="333" style="margin: 50px">
+    <img src="{{ MEDIA_URL }} {{ libro.portada.url }}" alt="{{ libro.nombre }}" width="500" height="333" style="margin: 50px">
 
     <table id="myTable">
         <tr class="header">
