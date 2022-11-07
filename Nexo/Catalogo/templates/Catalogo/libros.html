@@ -34,7 +34,7 @@
           <tr> 
             {% for libro in lista_libros %}
               {% if libro.leido == True %}
-                <td><a href="{% url 'detalle' libro.id %}">{{ libro.nombre }}</a></td>
+                <td><a href="{% url 'librosDetalle' libro.id %}">{{ libro.nombre }}</a></td>
                 <td>{{ libro.autor }}</td>
                 <td>{{ libro.genero }}</td>
                 <td>{{ libro.subgenero }}</td>

@@ -32,13 +32,13 @@
 
         {% if lista_pelis %}
           <tr> 
-            {% for peli in lista_pelis %}
-              {% if peli.vista == True %}
-                <td>{{ peli.nombre }}</td>
-                <td>{{ peli.director }}</td>
-                <td>{{ peli.genero }}</td>
-                <td>{{ peli.subgenero }}</td>
-                <td>{{ peli.puntuacion }}</td>
+            {% for pelicula in lista_pelis %}
+              {% if pelicula.vista == True %}
+                <td><a href="{% url 'peliculasDetalle' pelicula.id %}">{{ pelicula.nombre }}</a></td>
+                <td>{{ pelicula.director }}</td>
+                <td>{{ pelicula.genero }}</td>
+                <td>{{ pelicula.subgenero }}</td>
+                <td>{{ pelicula.puntuacion }}</td>
               </tr>
               {% endif %}
             {% endfor %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+<html>
+  <head>
+    <title>{% block title %}Películas{% endblock title %}</title>
+  </head>
+
+  <body>
+
+    {% block content %}
+    <style>
+    body {
+        background-image: url({% static 'Catalogo/images/peliculas.jpg' %});
+    }
+    </style>
+       
+    <div id="box">
+        <h2>&#9776;&nbsp;<b>{{ pelicula.nombre }}</b></h2>
+        {% if pelicula.comentario%}
+            <p>{{ pelicula.comentario }}</p>
+        {% endif %}
+    </div>
+    {% if pelicula.portada%}
+        <img src="{{ pelicula.portada.url }}" alt="{{ pelicula.nombre }}" class="image">
+    {% endif %}
+    <table id="myTable">
+        <tr class="header">
+            <th>Director</th>
+            <th>Género</th>
+            <th>Subgénero</th>
+            <th>Publicación</th>
+            <th>Visualización</th>
+            <th>Puntuación</th>
+        </tr>
+        <tr> 
+            <td>{{ pelicula.director }}</td>
+            <td>{{ pelicula.genero }}</td>
+            <td>{{ pelicula.subgenero }}</td>
+            <td>{{ pelicula.estreno }}</td>
+            <td>{{ pelicula.visualizacion }}</td>
+            <td>{{ pelicula.puntuacion }}</td>
+        </tr>
+    </table>
+    {% endblock content %}
+    </body>
+</html>

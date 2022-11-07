@@ -24,6 +24,7 @@ def libros(request):
     context = {'lista_libros': lista_libros}
     return render(request, 'Catalogo/libros.html', context)
 
+@login_required
 def libros_detalle(request, libro_id):
     libro = get_object_or_404(Libro, pk=libro_id)
     return render(request, 'Catalogo/librosDetalle.html', {'libro': libro})
@@ -35,7 +36,17 @@ def peliculas(request):
     return render(request, 'Catalogo/peliculas.html', context)
 
 @login_required
+def peliculas_detalle(request, pelicula_id):
+    pelicula = get_object_or_404(Pelicula, pk=pelicula_id)
+    return render(request, 'Catalogo/peliculasDetalle.html', {'pelicula': pelicula})
+
+@login_required
 def series(request):
     lista_series = Serie.objects.order_by('-visualizacion')[:30]
     context = {'lista_series': lista_series}
     return render(request, 'Catalogo/series.html', context)
+
+@login_required
+def series_detalle(request, serie_id):
+    serie = get_object_or_404(Serie, pk=serie_id)
+    return render(request, 'Catalogo/seriesDetalle.html', {'serie': serie})

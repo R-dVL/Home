@@ -34,7 +34,7 @@
           <tr> 
             {% for serie in lista_series %}
               {% if serie.vista == True %}
-                <td>{{ serie.nombre }}</td>
+                <td><a href="{% url 'seriesDetalle' serie.id %}">{{ serie.nombre }}</a></td>
                 <td>{{ serie.director }}</td>
                 <td>{{ serie.genero }}</td>
                 <td>{{ serie.subgenero }}</td>

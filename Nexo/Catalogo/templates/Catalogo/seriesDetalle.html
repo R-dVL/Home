@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+<html>
+  <head>
+    <title>{% block title %}Series{% endblock title %}</title>
+  </head>
+
+  <body>
+
+    {% block content %}
+    <style>
+    body {
+        background-image: url({% static 'Catalogo/images/series.jpg' %});
+    }
+    </style>
+       
+    <div id="box">
+        <h2>&#9776;&nbsp;<b>{{ serie.nombre }}</b></h2>
+        {% if serie.comentario%}
+            <p>{{ serie.comentario }}</p>
+        {% endif %}
+    </div>
+    {% if serie.portada%}
+        <img src="{{ serie.portada.url }}" alt="{{ serie.nombre }}" class="image">
+    {% endif %}
+    <table id="myTable">
+        <tr class="header">
+            <th>Director</th>
+            <th>Género</th>
+            <th>Subgénero</th>
+            <th>Publicación</th>
+            <th>Visualización</th>
+            <th>Puntuación</th>
+        </tr>
+        <tr> 
+            <td>{{ serie.director }}</td>
+            <td>{{ serie.genero }}</td>
+            <td>{{ serie.subgenero }}</td>
+            <td>{{ serie.estreno }}</td>
+            <td>{{ serie.visualizacion }}</td>
+            <td>{{ serie.puntuacion }}</td>
+        </tr>
+    </table>
+    {% endblock content %}
+    </body>
+</html>
