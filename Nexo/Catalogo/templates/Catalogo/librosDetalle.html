@@ -18,6 +18,7 @@
     <div id="box">
         <h2>&#9776;&nbsp;<b>{{ libro.nombre }}</b></h2>
         {% if libro.comentario%}
+            <hr size="1" width="35%" color="black" style="margin-left: 5px">  
             <p>{{ libro.comentario }}</p>
         {% endif %}
     </div>
@@ -42,6 +43,7 @@
             <td>{{ libro.puntuacion }}</td>
         </tr>
     </table>
+    <button id="addButton"><a href="/admin/Catalogo/libro/{{ libro.id }}/change/">+ Editar libro</a></button>
     {% endblock content %}
     </body>
 </html>
