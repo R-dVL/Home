@@ -38,6 +38,7 @@ class Serie(models.Model):
     genero = models.CharField(max_length = 50)
     subgenero = models.CharField(max_length = 50, blank = True, null = True)
     estreno = models.DateField("Fecha de estreno")
+    temporada = models.IntegerField(null = True)
     vista = models.BooleanField()
     visualizacion = models.DateField("Fecha de visualización", blank = True, null = True)
     puntuacion = models.FloatField(blank = True, null = True)

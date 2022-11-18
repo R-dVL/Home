@@ -33,7 +33,7 @@
               <tr> 
               {% for libro in lista_libros %}
                 {% if libro.leido == False %}
-                  <td>{{ libro.nombre }}</td>
+                  <td><a href="{% url 'librosDetalle' libro.id %}">{{ libro.nombre }}</a></td>
                   <td>{{ libro.autor }}</td>
                   <td>{{ libro.genero }}</td>
                   <td>{{ libro.subgenero }}</td>
@@ -44,6 +44,7 @@
               <p>Tienes que leer más.</p>
           {% endif %}
       </table>
+      <button id="addButton"><a href="/admin/Catalogo/libro/add/">+ Añadir libro</a></button>
       </br>
       <table id="myTable">
         <tr class="header">
@@ -59,7 +60,7 @@
               <tr> 
               {% for peli in lista_pelis %}
                 {% if peli.vista == False %}
-                  <td>{{ peli.nombre }}</td>
+                  <td><a href="{% url 'peliculasDetalle' peli.id %}">{{ peli.nombre }}</a></td>
                   <td>{{ peli.director }}</td>
                   <td>{{ peli.genero }}</td>
                   <td>{{ peli.subgenero }}</td>
@@ -70,6 +71,7 @@
               <p>Tienes que ver más peliculas.</p>
           {% endif %}
       </table>
+      <button id="addButton"><a href="/admin/Catalogo/pelicula/add/">+ Añadir película</a></button>
       </br>
       <table id="myTable">
         <tr class="header">
@@ -84,7 +86,7 @@
               <tr> 
               {% for serie in lista_series %}
                 {% if serie.vista == False %}
-                  <td>{{ serie.nombre }}</td>
+                  <td><a href="{% url 'seriesDetalle' serie.id %}">{{ serie.nombre }}</a></td>
                   <td>{{ serie.director }}</td>
                   <td>{{ serie.genero }}</td>
                   <td>{{ serie.subgenero }}</td>
@@ -95,6 +97,7 @@
               <p>Tienes que ver más series.</p>
           {% endif %}
       </table>
+      <button id="addButton"><a href="/admin/Catalogo/serie/add/">+ Añadir serie</a></button>
     {% endblock content %}
   </body>
 </html>

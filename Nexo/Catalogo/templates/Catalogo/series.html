@@ -27,7 +27,8 @@
           <th onclick="sortTable(1)">Director</th>
           <th onclick="sortTable(2)">Género</th>
           <th onclick="sortTable(3)">Subgénero</th>
-          <th onclick="sortTable(4)">Puntuación</th>
+          <th onclick="sortTable(4)">Temporada</th>
+          <th onclick="sortTable(5)">Puntuación</th>
         </tr>
 
         {% if lista_series %}
@@ -38,6 +39,7 @@
                 <td>{{ serie.director }}</td>
                 <td>{{ serie.genero }}</td>
                 <td>{{ serie.subgenero }}</td>
+                <td>{{ serie.temporada }}</td>
                 <td>{{ serie.puntuacion }}</td>
           </tr>
               {% endif %}
