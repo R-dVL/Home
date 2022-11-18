@@ -75,12 +75,13 @@
       </br>
       <table id="myTable">
         <tr class="header">
-          <th colspan="4">Series pendientes</th>
+          <th colspan="5">Series pendientes</th>
         <tr class="header">
             <th>Nombre</th>
             <th>Director</th>
             <th>Género</th>
             <th>Subgénero</th>
+            <th>Temporada</th>
         </tr>
         {% if lista_series %}
               <tr> 
@@ -90,6 +91,7 @@
                   <td>{{ serie.director }}</td>
                   <td>{{ serie.genero }}</td>
                   <td>{{ serie.subgenero }}</td>
+                  <td>{{ serie.temporada }}</td>
                 {% endif %}
               </tr>
               {% endfor %}
