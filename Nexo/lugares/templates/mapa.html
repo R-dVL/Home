@@ -1,0 +1,28 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'Catalogo/base.css' %}">
+<link rel="shortcut icon" type="image/png" href="{% static '/Catalogo/images/favicon.png' %}"/>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mapa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static 'mapa.css' %}" />
+    <link rel="stylesheet" type="text/css" href="https:///unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https:///unpkg.com/leaflet/dist/leaflet.js"></script>
+  </head>
+  <section class="site">
+    <nav>
+      <a href="/">HOME</a>
+      <a href="/lugares/mapa/">Mapa</a>
+      <a href="/lugares/restaurantes/">Restaurantes</a>
+      <a href="/admin">Usuario</a>
+    </nav>
+  </section>
+  <body>
+    {{ restaurantes|json_script:"restaurantes-data" }}
+    <div id="map"></div>
+    <script src="{% static 'mapa.js' %}"></script>
+  </body>
+</html>
+
