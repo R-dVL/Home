@@ -1,0 +1,50 @@
+{% extends "lugares.html" %}
+{% load static %}
+
+<html>
+  <head>
+    <title>{% block title %}Restaurantes{% endblock title %}</title>
+  </head>
+
+  <body>
+
+    {% block content %}
+    <style>
+      body {
+        background-color: beige;
+      }
+    </style>
+      <div id="box">
+        <h2>&#9776;&nbsp;<b>Restaurantes</b></h2>
+      </div>
+
+      <br/><input type="text" id="myInput" onkeyup="myFunction()" placeholder="¿Qué andas buscando?">
+      <table id="myTable">
+        <tr class="header">
+          <th onclick="sortTable(0)">Nombre</th>
+          <th onclick="sortTable(1)">Tipo</th>
+          <th onclick="sortTable(2)">Precio</th>
+          <th onclick="sortTable(3)">lugar</th>
+          <th onclick="sortTable(4)">Puntuación</th>
+        </tr>
+
+        {% if lista_restaurantes %}
+          <tr> 
+            {% for restaurante in lista_restaurantes %}
+              {% if restaurante.pendiente == False %}
+                <td>{{ restaurante.nombre }}</a></td>
+                <td>{{ restaurante.tipo }}</td>
+                <td>{{ restaurante.precio }}</td>
+                <td>{{ restaurante.lugar }}</td>
+                <td>{{ restaurante.puntuacion }}</td>
+              </tr>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            <p>Te falta calle</p>
+        {% endif %}
+      </table>
+      <button id="addButton"><a href="/admin/lugares/restaurante/add/">+ Añadir restaurante</a></button>
+    {% endblock content %}
+    </body>
+</html>
