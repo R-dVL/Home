@@ -8,9 +8,9 @@ from .models import Libro, Pelicula, Serie
 # Create your views here.
 @login_required
 def pendientes(request):
-    lista_libros = Libro.objects.order_by('-lectura')
-    lista_pelis = Pelicula.objects.order_by('-visualizacion')
-    lista_series = Serie.objects.order_by('-visualizacion')
+    lista_libros = Libro.objects.order_by('-autor')
+    lista_pelis = Pelicula.objects.order_by('-director')
+    lista_series = Serie.objects.order_by('-director')
     context = {
         'lista_libros': lista_libros,
         'lista_pelis': lista_pelis,
@@ -20,7 +20,7 @@ def pendientes(request):
 
 @login_required
 def libros(request):
-    lista_libros = Libro.objects.order_by('-lectura')[:30]
+    lista_libros = Libro.objects.order_by('-puntuacion')[:30]
     context = {'lista_libros': lista_libros}
     return render(request, 'Catalogo/libros.html', context)
 
@@ -31,7 +31,7 @@ def libros_detalle(request, libro_id):
 
 @login_required
 def peliculas(request):
-    lista_pelis = Pelicula.objects.order_by('-visualizacion')[:30]
+    lista_pelis = Pelicula.objects.order_by('-puntuacion')[:30]
     context = {'lista_pelis': lista_pelis}
     return render(request, 'Catalogo/peliculas.html', context)
 
@@ -42,7 +42,7 @@ def peliculas_detalle(request, pelicula_id):
 
 @login_required
 def series(request):
-    lista_series = Serie.objects.order_by('-visualizacion')[:30]
+    lista_series = Serie.objects.order_by('-puntuacion')[:30]
     context = {'lista_series': lista_series}
     return render(request, 'Catalogo/series.html', context)
 
