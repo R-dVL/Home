@@ -9,12 +9,6 @@
   <body>
 
     {% block content %}
-    <style>
-    body {
-        background-image: url({% static 'Catalogo/images/peliculas.jpg' %});
-    }
-    </style>
-       
     <div id="box">
         <h2>&#9776;&nbsp;<b>{{ pelicula.nombre }}</b></h2>
         {% if pelicula.comentario%}

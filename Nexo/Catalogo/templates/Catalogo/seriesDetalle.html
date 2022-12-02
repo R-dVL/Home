@@ -8,13 +8,7 @@
 
   <body>
 
-    {% block content %}
-    <style>
-    body {
-        background-image: url({% static 'Catalogo/images/series.jpg' %});
-    }
-    </style>
-       
+    {% block content %} 
     <div id="box">
         <h2>&#9776;&nbsp;<b>{{ serie.nombre }}</b></h2>
         {% if serie.comentario%}
