@@ -1,6 +1,7 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'Catalogo/base.css' %}">
 <link rel="shortcut icon" type="image/png" href="{% static '/Catalogo/images/favicon.png' %}"/>
+<script type="text/javascript" src="{% static 'scripts/sidenav.js' %}"></script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,18 +12,21 @@
     <link rel="stylesheet" type="text/css" href="https:///unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https:///unpkg.com/leaflet/dist/leaflet.js"></script>
   </head>
-  <section class="site">
-    <nav>
-      <a href="/">HOME</a>
-      <a href="/lugares/mapa/">Mapa</a>
-      <a href="/lugares/restaurantes/">Restaurantes</a>
-      <a href="/admin">Usuario</a>
-    </nav>
-  </section>
-  <body>
-    {{ restaurantes|json_script:"restaurantes-data" }}
-    <div id="map"></div>
-    <script src="{% static 'mapa.js' %}"></script>
-  </body>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/catalogo/index/">Librería</a>
+    <a href="/lugares/mapa/">Lugares</a>
+    <a href="http://192.168.1.142:8000">GatiCam</a>
+    <a href="/admin">Usuario</a>
+  </div>
+
+  <main id="main">
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <body>
+      {{ restaurantes|json_script:"restaurantes-data" }}
+      <div id="map"></div>
+      <script src="{% static 'mapa.js' %}"></script>
+    </body>
+  </main> 
 </html>
 

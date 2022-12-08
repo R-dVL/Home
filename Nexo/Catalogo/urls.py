@@ -2,6 +2,7 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
+    path('index/', views.index, name = 'index'),
     path('pendientes/', views.pendientes, name = 'pendientes'),
     path('libros/', views.libros, name = "libros"),
     path('libros/<int:libro_id>/', views.libros_detalle, name="librosDetalle"),

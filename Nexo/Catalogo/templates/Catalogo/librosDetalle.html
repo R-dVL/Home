@@ -9,35 +9,35 @@
   <body>
 
     {% block content %}
+    <style>
+        body{
+          background: url("images/libros.jpg");
+        }
+    </style>
+
     <div id="box">
-        <h2>&#9776;&nbsp;<b>{{ libro.nombre }}</b></h2>
-        {% if libro.comentario%}
-            <hr size="1" width="35%" color="black" style="margin-left: 5px">  
-            <p>{{ libro.comentario }}</p>
-        {% endif %}
+        <h2>&nbsp;<b>{{ libro.nombre }}</b></h2>
     </div>
-    {% if libro.portada%}
-        <img src="{{ libro.portada.url }}" alt="{{ libro.nombre }}" class="image">
-    {% endif %}
-    <table id="myTable">
-        <tr class="header">
-            <th>Autor</th>
-            <th>Género</th>
-            <th>Subgénero</th>
-            <th>Publicación</th>
-            <th>Lectura</th>
-            <th>Puntuación</th>
-        </tr>
-        <tr> 
-            <td>{{ libro.autor }}</td>
-            <td>{{ libro.genero }}</td>
-            <td>{{ libro.subgenero }}</td>
-            <td>{{ libro.publicacion }}</td>
-            <td>{{ libro.lectura }}</td>
-            <td>{{ libro.puntuacion }}</td>
-        </tr>
-    </table>
-    <button id="addButton"><a href="/admin/Catalogo/libro/{{ libro.id }}/change/">+ Editar libro</a></button>
+    <div class="grid-parent">
+        <div class="grid-child">
+                {% if libro.portada%}
+                    <img src="{{ libro.portada.url }}" alt="{{ libro.nombre }}" class="image">
+                {% endif %}
+        </div>
+        <div class="grid-child">
+            <ul><b>Autor:</b> {{ libro.autor }}.</ul>
+            <ul><b>Género:</b> {{ libro.genero }}.</ul>
+            <ul><b>Subgénero:</b> {{ libro.subgenero }}.</ul>
+            <ul><b>Publicación:</b> {{ libro.publicacion }}.</ul>
+            <ul><b>Lectura:</b> {{ libro.lectura }}.</ul>
+            <ul><b>Puntuación:</b> {{ libro.puntuacion }}.</ul>
+            {% if libro.comentario%}
+            <ul><b>Comentario:</b> {{ libro.comentario }}.</ul>
+            {% endif %}
+            <hr size="1" width="50%" color="black" style="margin-left: 40px"> 
+            <button id="addButton"><a href="/admin/Catalogo/libro/{{ libro.id }}/change/">+ Editar libro</a></button>
+        </div>
+    </div>
     {% endblock content %}
     </body>
 </html>

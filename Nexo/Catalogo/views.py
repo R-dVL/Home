@@ -6,6 +6,9 @@ from django.contrib.auth.decorators import login_required
 from .models import Libro, Pelicula, Serie
 
 # Create your views here.
+def index(request):
+    return render(request, 'Catalogo/index.html')
+    
 @login_required
 def pendientes(request):
     lista_libros = Libro.objects.order_by('-autor')
