@@ -14,10 +14,16 @@
 </head>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <h2><a href="/">Home</a></h2>
   <a href="/catalogo/index/">Librería</a>
   <a href="/lugares/mapa/">Lugares</a>
   <a href="http://192.168.1.142:8000">GatiCam</a>
   <a href="/admin">Usuario</a>
+  {% if user.is_authenticated %}
+  <a href="{% url 'logout' %}">Log Out</a>
+  {% else %}
+  <a href="{% url 'login' %}">Log In</a>
+  {% endif %}
 </div>
   <main id="main">
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
