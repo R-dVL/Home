@@ -9,8 +9,11 @@
   <body>
     {% block content %} 
     <style>
-        body{background-image: url("images/series.jpg");}
-    </style>
+        body{
+          background: url("/static/Catalogo/images/series.jpg") no-repeat fixed;
+            background-size: cover;
+        }
+      </style>
     <div id="box">
         <h2>&nbsp;<b>{{ serie.nombre }}</b></h2>
     </div>
