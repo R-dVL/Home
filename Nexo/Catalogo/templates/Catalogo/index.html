@@ -6,34 +6,18 @@
     <title>{% block title %}Librería{% endblock title %}</title>
   </head>
   {% block content %}
-  <div class="grid-parent">
-    <div class="grid-child">
-      <a href="/catalogo/libros/"><div class="hbox" style="top:10%">
-        <h2>&nbsp;<b>Libros</b></h2>
-        <hr size="1" width="50%" color="black" style="margin-left: 5px">  
-        <p>Ranking de libros leídos.</p>
-      </div></a>
-      <a href="/catalogo/peliculas/"><div class="hbox" style="top:30%">
-        <h2>&nbsp;<b>Películas</b></h2>
-        <hr size="1" width="50%" color="black" style="margin-left: 5px">  
-        <p>Ranking de películas.</p>
-      </div></a>
-    </div>
-  </div>
-  <div class="grid-parent">
-    <div class="grid-child">
-      <a href="/catalogo/series/"><div class="hbox" style="top:50%">
-        <h2>&nbsp;<b>Series</b></h2>
-        <hr size="1" width="50%" color="black" style="margin-left: 5px">  
-        <p>Ranking de series.</p>
-      </div></a>
-      <a href="/catalogo/pendientes/"><div class="hbox" style="top:70%">
-        <h2>&nbsp;<b>Pendientes</b></h2>
-        <hr size="1" width="50%" color="black" style="margin-left: 5px">  
-        <p>Lista de series, pelis y libros pendientes.</p>
-      </div></a>
-    </div>
-  </div>
+  <a href="/catalogo/libros/"><div class="hbox">
+    <h2>&nbsp;<b>Libros</b></h2>
+  </div></a>
+  <a href="/catalogo/peliculas/"><div class="hbox">
+    <h2>&nbsp;<b>Películas</b></h2>
+  </div></a>
+  <a href="/catalogo/series/"><div class="hbox">
+    <h2>&nbsp;<b>Series</b></h2>
+  </div></a>
+  <a href="/catalogo/pendientes/"><div class="hbox">
+    <h2>&nbsp;<b>Pendientes</b></h2>
+  </div></a>
   {% endblock content %}
 </body>
 </html>

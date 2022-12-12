@@ -145,13 +145,12 @@ a:active {
 .hbox{
   transition: box-shadow .3s;
   box-sizing: border-box;
-  width:auto;
-  height: 200px;
-  background-color: rgb(255, 255, 255);
-  border: 1px solid;
-  padding: 10px;
-  margin-bottom: 20px;
-  margin-right: 20px;
+	width: auto;
+	margin: 50px;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid;
+	padding: 10px;
+	border-radius: 25px;
 }
 .hbox:hover{
   box-shadow: 5px 10px rgba(0, 0, 0, 0.493);
