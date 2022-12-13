@@ -6,16 +6,25 @@
     <title>{% block title %}Librería{% endblock title %}</title>
   </head>
   {% block content %}
-  <a href="/catalogo/libros/"><div class="hbox">
+  <span style="font-size:30px;cursor:pointer;color:black" onclick="openNav()">&#9776;</span>
+  <a href="/catalogo/libros/"><div class="hbox" style="background: url(/static/Catalogo/images/libros.jpg) no-repeat fixed;
+    background-size: cover;
+    color: white;">
     <h2>&nbsp;<b>Libros</b></h2>
   </div></a>
-  <a href="/catalogo/peliculas/"><div class="hbox">
+  <a href="/catalogo/peliculas/"><div class="hbox" style="background: url(/static/Catalogo/images/peliculas.jpg) no-repeat fixed;
+    background-size: cover;
+    color: white;">
     <h2>&nbsp;<b>Películas</b></h2>
   </div></a>
-  <a href="/catalogo/series/"><div class="hbox">
+  <a href="/catalogo/series/"><div class="hbox" style="background: url(/static/Catalogo/images/series.jpg) no-repeat fixed;
+    background-size: cover;
+    color: white;">
     <h2>&nbsp;<b>Series</b></h2>
   </div></a>
-  <a href="/catalogo/pendientes/"><div class="hbox">
+  <a href="/catalogo/pendientes/"><div class="hbox" style="background: url(/static/Catalogo/images/home.jpeg) no-repeat fixed;
+    background-size: cover;
+    color: white;">
     <h2>&nbsp;<b>Pendientes</b></h2>
   </div></a>
   {% endblock content %}
