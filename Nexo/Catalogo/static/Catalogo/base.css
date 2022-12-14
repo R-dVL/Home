@@ -147,7 +147,7 @@ a:active {
   transition: box-shadow .3s;
   box-sizing: border-box;
 	width: auto;
-  height: 20%;
+  height: auto;
 	margin: 50px;
 	background-color: rgb(255, 255, 255);
 	border: 1px solid;
