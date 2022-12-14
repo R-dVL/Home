@@ -116,7 +116,9 @@ a:active {
 #box {
 	box-sizing: border-box;
 	width: 75%;
-	margin: 50px;
+  margin-top: 20px;
+  margin-right: auto;
+	margin-bottom: 50px;
 	background-color: rgb(255, 255, 255);
 	border: 1px solid;
 	padding: 10px;
@@ -126,10 +128,10 @@ a:active {
 
 .image {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;
-  width: 80%;
+  left: 20px;
+  margin:auto;
+  width: 300px;
+  height: 400px;
 }
 
 #addButton {
@@ -161,13 +163,14 @@ a:active {
 }
 
 .grid-parent { 
-  width: 50%;
-  margin: auto;
-   
+  width: auto;
+  margin-left: auto;
 } 
 .grid-child { 
   float: left; 
-  width: 50%; 
+  width: auto; 
+  margin-bottom: 20px;
+  margin-left: 20px;
 } 
 
 /* Fixed sidenav, full height */

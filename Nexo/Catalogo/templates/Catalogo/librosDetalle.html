@@ -18,9 +18,13 @@
         }
     </style>
 
-    <div id="box">
+    <div id="box"><a href="/admin/Catalogo/libro/{{ libro.id }}/change/">
         <h2>&nbsp;<b>{{ libro.nombre }}</b></h2>
-    </div>
+        {% if libro.comentario%}
+        <hr size="1" width="50%" color="black" style="margin-left: 10px">
+        <p style="font-size:14px; margin-left: 10px"><i>{{ libro.comentario }}.</i></p>
+        {% endif %}
+    </a></div>
     <div class="grid-parent">
         <div class="grid-child">
                 {% if libro.portada%}
@@ -28,17 +32,15 @@
                 {% endif %}
         </div>
         <div class="grid-child">
+          <div id="box" style="background-color: rgba(255, 255, 255, 0.514);border-radius: 0px; margin: auto; width: 400px; height: 400px">
             <ul><b>Autor:</b> {{ libro.autor }}.</ul>
             <ul><b>Género:</b> {{ libro.genero }}.</ul>
             <ul><b>Subgénero:</b> {{ libro.subgenero }}.</ul>
             <ul><b>Publicación:</b> {{ libro.publicacion }}.</ul>
             <ul><b>Lectura:</b> {{ libro.lectura }}.</ul>
             <ul><b>Puntuación:</b> {{ libro.puntuacion }}.</ul>
-            {% if libro.comentario%}
-            <ul><b>Comentario:</b> {{ libro.comentario }}.</ul>
-            {% endif %}
             <hr size="1" width="50%" color="black" style="margin-left: 40px"> 
-            <button id="addButton"><a href="/admin/Catalogo/libro/{{ libro.id }}/change/">+ Editar libro</a></button>
+          </div>
         </div>
     </div>
     {% endblock content %}
