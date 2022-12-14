@@ -147,7 +147,7 @@ a:active {
   transition: box-shadow .3s;
   box-sizing: border-box;
 	width: auto;
-  height: 15%;
+  height: 20%;
 	margin: 50px;
 	background-color: rgb(255, 255, 255);
 	border: 1px solid;
@@ -174,7 +174,7 @@ a:active {
 /* Fixed sidenav, full height */
 .sidenav {
   height: 100%;
-  width: 200px;
+  width: 0px;
   position: fixed;
   z-index: 1;
   top: 0;
