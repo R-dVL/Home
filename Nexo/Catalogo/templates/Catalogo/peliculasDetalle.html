@@ -9,7 +9,7 @@
   <body>
 
     {% block content %}
-    <span style="font-size:30px;cursor:pointer;color:whitesmoke" onclick="openNav()">&#9776;</span>
+    <span style="font-size:30px;cursor:pointer;color:black" onclick="openNav()">&#9776;</span>
     <style>
         body{
           background: url("/static/Catalogo/images/peliculas.jpg") no-repeat fixed;
@@ -23,15 +23,16 @@
         <hr size="1" width="50%" color="black" style="margin-left: 10px">
         <p style="font-size:14px; margin-left: 10px"><i>{{ pelicula.comentario }}.</i></p>
         {% endif %}
-      </a></div>
-    <div class="grid-parent">
-        <div class="grid-child">
-                {% if pelicula.portada%}
-                    <img src="{{ pelicula.portada.url }}" alt="{{ pelicula.nombre }}" class="image">
-                {% endif %}
-        </div>
-        <div class="grid-child">
-          <div id="box" style="background-color: rgba(255, 255, 255, 0.514);border-radius: 0px; margin: auto; width: 400px; height: 400px">
+    </a></div>
+    <table class="container">
+      <tr class="table-row">
+        <td class="table-cell">
+          {% if pelicula.portada%}
+          <img src="{{ pelicula.portada.url }}" alt="{{ pelicula.nombre }}" class="image">
+          {% endif %}
+        </td>
+        <td class="table-cell">
+          <div id="description">
             <ul><b>Director:</b> {{ pelicula.director }}.</ul>
             <ul><b>Género:</b> {{ pelicula.genero }}.</ul>
             <ul><b>Subgénero:</b> {{ pelicula.subgenero }}.</ul>
@@ -40,8 +41,9 @@
             <ul><b>Puntuación:</b> {{ pelicula.puntuacion }}.</ul>
             <hr size="1" width="50%" color="black" style="margin-left: 40px"> 
           </div>
-        </div>
-    </div>
+        </td>
+      </tr>
+    </table>
     {% endblock content %}
     </body>
 </html>

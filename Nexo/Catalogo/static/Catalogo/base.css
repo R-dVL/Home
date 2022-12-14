@@ -115,9 +115,10 @@ a:active {
 /* Cajas de las vistas de tablas*/
 #box {
 	box-sizing: border-box;
-	width: 75%;
+	width: 85%;
   margin-top: 20px;
-  margin-right: auto;
+  margin-right: 50;
+  margin-left: 50;
 	margin-bottom: 50px;
 	background-color: rgb(255, 255, 255);
 	border: 1px solid;
@@ -126,12 +127,20 @@ a:active {
 	border-radius: 25px;
   }
 
+#description {
+	box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.456);
+	width: 400px;
+  height: 500px;
+	border: 1px solid;
+	padding: 10px;
+}
+
 .image {
   display: block;
-  left: 20px;
   margin:auto;
-  width: 300px;
-  height: 400px;
+  width: 400px;
+  height: 500px;
 }
 
 #addButton {
@@ -162,16 +171,21 @@ a:active {
   text-shadow: #f1f1f1 1px 0 10px;
 }
 
-.grid-parent { 
+.container {
+  display: table;
   width: auto;
-  margin-left: auto;
-} 
-.grid-child { 
-  float: left; 
-  width: auto; 
-  margin-bottom: 20px;
-  margin-left: 20px;
-} 
+  margin-left: 25%;
+  margin-bottom: 20;
+}
+.table-row {
+  display: table-row;
+  height: 300px;
+}
+.table-cell {
+  display: table-cell;
+  padding: 2px;
+  box-shadow: 5px 10px rgba(0, 0, 0, 0.493);  
+}
 
 /* Fixed sidenav, full height */
 .sidenav {

@@ -23,14 +23,15 @@
         <p style="font-size:14px; margin-left: 10px"><i>{{ serie.comentario }}.</i></p>
         {% endif %}
     </a></div>
-    <div class="grid-parent">
-        <div class="grid-child">
-                {% if serie.portada%}
-                    <img src="{{ serie.portada.url }}" alt="{{ serie.nombre }}" class="image">
-                {% endif %}
-        </div>
-        <div class="grid-child">
-          <div id="box" style="background-color: rgba(255, 255, 255, 0.514);border-radius: 0px; margin: auto; width: 400px; height: 400px">
+    <table class="container">
+      <tr class="table-row">
+        <td class="table-cell">
+          {% if serie.portada%}
+          <img src="{{ serie.portada.url }}" alt="{{ serie.nombre }}" class="image">
+          {% endif %}
+        </td>
+        <td class="table-cell">
+          <div id="description">
             <ul><b>Director:</b> {{ serie.director }}.</ul>
             <ul><b>Género:</b> {{ serie.genero }}.</ul>
             <ul><b>Subgénero:</b> {{ serie.subgenero }}.</ul>
@@ -39,8 +40,9 @@
             <ul><b>Puntuación:</b> {{ serie.puntuacion }}.</ul>
             <hr size="1" width="50%" color="black" style="margin-left: 40px"> 
           </div>
-        </div>
-    </div>
+        </td>
+      </tr>
+    </table>
     {% endblock content %}
     </body>
 </html>
