@@ -28,7 +28,12 @@
   <p>Hola {{ user.username }}!</p>
   <button><a href="{% url 'logout' %}">Log Out</a></button>
 {% else %}
-  <p>Para ver el contenido necesitas iniciar sesión</p> 
+  <p class="cmdusr">&nbsp;rdvl@website ~</p> 
+  <p class="cmdtxt">&nbsp;$ Bienvenido, a mi base de datos.</p>
+  <p class="cmdusr">&nbsp;rdvl@website ~</p> 
+  <p class="cmdtxt">&nbsp;$ Aquí verás a mi gato comiendo, libros pendientes e incluso un mapa con mis sitios favoritos.</p>
+  <p class="cmdusr">&nbsp;rdvl@website ~</p> 
+  <p class="cmdtxt">&nbsp;$ Para ver todas estas maravillosas cosas inicia sesión.</p>
   <button><a href="{% url 'login' %}">Log In</a></button>
 {% endif %}
 </section>
